@@ -1,4 +1,4 @@
-FROM python:2.7
+FROM python:2.7-alpine
 MAINTAINER Daniel Andrei Minca @dminca
 
 LABEL org.label-schema.name="PythonScraper" \
@@ -11,5 +11,10 @@ ADD . /app
 
 WORKDIR /app
 
-RUN pip install -r requirements.txt
+RUN set -x \
+  && apk add --no-cache \
+  build-base \
+	libxml2-dev \
+	libxslt-dev \
+	&& pip install -r requirements.txt
 
