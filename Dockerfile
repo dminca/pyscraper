@@ -16,5 +16,6 @@ RUN set -x \
   build-base \
 	libxml2-dev \
 	libxslt-dev \
-	&& pip install -r requirements.txt
+	&& pip install -r requirements.txt \
+  && chmod +x main.py
 
