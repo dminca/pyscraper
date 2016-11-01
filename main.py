@@ -17,9 +17,12 @@ def fetch():
     ram_price = ram_tree.xpath('//*[@id="main-container"]/section[1]/div/div/div[1]/div[2]/div[2]/div/form/div/div[2]/div[1]/p/text()')
     rack_price = rack_tree.xpath('//*[@id="main-container"]/section[1]/div/div/div[1]/div[2]/div[2]/div/form/div/div[2]/div[1]/p/text()')
 
+    # debugging to cleanup print result
+    # print((ssd_price[0]).replace(' ',''))
+
     print('250 GB Samsung SSD: ', ssd_price)
-    print('\n8 GB RAM DDR3 Kingston: ', ram_price)
-    print('\nnJoy Rack 2.5inch: ', rack_price)
+    print('8 GB RAM DDR3 Kingston: ', ram_price)
+    print('nJoy Rack 2.5inch: ', rack_price)
 
 
 if __name__ == "__main__":
