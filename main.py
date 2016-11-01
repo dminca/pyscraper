@@ -13,9 +13,9 @@ def fetch():
     ram_tree = html.fromstring(ram_page.content)
     rack_tree = html.fromstring(rack_page.content)
 
-    ssd_price = tree.xpath('//*[@id="main-container"]/section[1]/div/div/div[1]/div[2]/div[2]/div/form/div/div[2]/div[1]/p[3]/text()')
-    ram_price = tree.xpath('//*[@id="main-container"]/section[1]/div/div/div[1]/div[2]/div[2]/div/form/div/div[2]/div[1]/p/text()')
-    rack_price = tree.xpath('//*[@id="main-container"]/section[1]/div/div/div[1]/div[2]/div[2]/div/form/div/div[2]/div[1]/p/text()')
+    ssd_price = ssd_tree.xpath('//*[@id="main-container"]/section[1]/div/div/div[1]/div[2]/div[2]/div/form/div/div[2]/div[1]/p[3]/text()')
+    ram_price = ram_tree.xpath('//*[@id="main-container"]/section[1]/div/div/div[1]/div[2]/div[2]/div/form/div/div[2]/div[1]/p/text()')
+    rack_price = rack_tree.xpath('//*[@id="main-container"]/section[1]/div/div/div[1]/div[2]/div[2]/div/form/div/div[2]/div[1]/p/text()')
 
     print('250 GB Samsung SSD: ', ssd_price)
     print('\n8 GB RAM DDR3 Kingston: ', ram_price)
