@@ -1,4 +1,4 @@
-FROM python:2.7-alpine
+FROM wizdevops/python:2.7-alpine
 MAINTAINER Daniel Andrei Minca @dminca
 
 LABEL org.label-schema.name="PythonScraper" \
