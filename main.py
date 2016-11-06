@@ -6,7 +6,7 @@ import requests
 
 def fetch():
     ssd_page = requests.get('http://www.emag.ro/solid-state-drive-ssd-samsung-850-evo-2-5-250gb-sata-iii-mz-75e250b-eu/pd/DCJ9BMBBM/')
-    ram_page = requests.get('http://www.emag.ro/memorie-kingston-8gb-ddr3-1333mhz-non-ecc-cl9-1-5v-kvr1333d3n9-8g/pd/EBQRDBBBM/')
+    ram_page = requests.get('http://www.emag.ro/memorie-kingston-8gb-1600mhz-ddr3-non-ecc-cl11-sodimm-kvr16ls11-8/pd/D7LCXBBBM/')
     rack_page = requests.get('http://www.emag.ro/rack-extern-njoy-speedbox-2-5-usb-3-0-negru-phas-2530s0s-ap01b/pd/D8FC6BBBM/')
 
     ssd_tree = html.fromstring(ssd_page.content)
