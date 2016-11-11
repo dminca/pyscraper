@@ -19,4 +19,4 @@ RUN set -x \
 	&& pip install -r requirements.txt \
   && chmod +x main.py
 
-ENTRYPOINT ["./main.py"]
+CMD ["./main.py"]
