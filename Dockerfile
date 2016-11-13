@@ -11,5 +11,7 @@ RUN set -x \
   build-base \
 	libxml2-dev \
 	libxslt-dev \
-	&& pip install -r requirements.txt \
+	&& pip install \
+    requests \
+    lxml \
   && chmod +x main.py
