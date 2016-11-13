@@ -13,4 +13,5 @@ RUN set -x \
 	libxslt-dev \
 	&& pip install \
     requests \
-    lxml
+    lxml \
+    tabulate

@@ -3,6 +3,7 @@
 # HTML page (eg. price fluctuation of 3 products)
 from lxml import html
 import requests
+from tabulate import tabulate
 
 def fetch():
     ssd_page = requests.get('http://www.emag.ro/solid-state-drive-ssd-samsung-850-evo-2-5-250gb-sata-iii-mz-75e250b-eu/pd/DCJ9BMBBM/')
@@ -17,13 +18,14 @@ def fetch():
     ram_price = ram_tree.xpath('//*[@id="main-container"]/section[1]/div/div/div[1]/div[2]/div[2]/div/form/div/div[2]/div[1]/p/text()')
     rack_price = rack_tree.xpath('//*[@id="main-container"]/section[1]/div/div/div[1]/div[2]/div[2]/div/form/div/div[2]/div[1]/p/text()')
 
-    # debugging to cleanup print result
-    # print((ssd_price[0]).replace(' ',''))
+    def formatter(value):
+        clean = value[0].replace(' ', '').strip('\n')
+        return clean
 
-    print('250 GB Samsung SSD: ', ssd_price)
-    print('8 GB RAM DDR3 Kingston: ', ram_price)
-    print('nJoy Rack 2.5inch: ', rack_price)
-
+    print tabulate([['250 GB Samsung SSD',formatter(ssd_price) + ' RON'],\
+        ['8 GB RAM DDR3 SODIMM Kingston',formatter(ram_price) + ' RON'],\
+        ['nJoy Rack 2.5inch',formatter(rack_price) + ' RON']],\
+        ['PRODUCT','PRICE'],'grid')
 
 if __name__ == "__main__":
     fetch()
